@@ -35,7 +35,7 @@
 # key
 
 
-cabinet = dict{}
+cabinet = dict()
 
 cabinet['summer'] = 12
 cabinet['fall'] = 3
@@ -100,7 +100,7 @@ print(ccc['csev'])
 # Traceback (most recent call last):
 #   File "<stdin>", line 1, in <module>
 # KeyError: 'csev'
-'csev' in ccc
+# 'csev' in ccc
 # False
 
 ## When we see a new name
