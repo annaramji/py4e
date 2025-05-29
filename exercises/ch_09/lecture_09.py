@@ -146,3 +146,25 @@ print(counts)
 # every dictionary has this .get() method
 
 # Counting is Marvelous -- Count on Sesame Street (just look it up on YouTube) :) 
+
+
+# Write a program to read through the mbox-short.txt and figure out who has sent the greatest number of mail messages. The program looks for 'From ' lines and takes the second word of those lines as the person who sent the mail. The program creates a Python dictionary that maps the sender's mail address to a count of the number of times they appear in the file. After the dictionary is produced, the program reads through the dictionary using a maximum loop to find the most prolific committer.
+fname = input("Enter file name: ")
+if len(fname) < 1:
+    fname = "mbox-short.txt"
+fh = open(fname)
+counts = dict()
+for line in fh:
+    if not line.startswith("From "):
+        continue
+    words = line.split()
+    email = words[1]
+    counts[email] = counts.get(email, 0) + 1
+# find the maximum count and corresponding email
+max_count = None
+max_email = None
+for email, count in counts.items():
+    if max_count is None or count > max_count:
+        max_count = count
+        max_email = email
+print(max_email, max_count)
